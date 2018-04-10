@@ -7,6 +7,7 @@ Jinja2==2.8
 MarkupSafe==0.23
 npyscreen==4.10.5
 numpy==1.11.0
+image==1.5.20
 Pillow==2.5.0
 protobuf==3.0.0b2
 psutil==4.2.0
