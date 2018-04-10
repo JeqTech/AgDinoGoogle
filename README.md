@@ -96,7 +96,7 @@ python main.py
 ```
 ### Propostas de melhorias:
 
-* Atualizar o código e bibliotecas para versões mais rescentes.
+* Atualizar o código e bibliotecas para versões mais recentes.
 
 * Realizar um processo de simulação do aprendizado do algortimo genético, ao invés de executar em tempo real, poderá acelerar o processo de aprendizado.
 
