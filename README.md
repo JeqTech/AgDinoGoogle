@@ -1,10 +1,19 @@
-# imdino
-# Chrome dinasaur automated player
+# Algoritmo Genético
+# Jogo do Chrome Dinossauro automatizado.
 
 
-This project is implemented in python and tensorflow
+Este projeto tem como fonte principal os códigos dos link abaixo.
 
-It uses neural networks to train a system to play dinosaur game on chrome when internet is off.
+https://github.com/ivanseidel/IAMDinosaur
+https://github.com/ajaiswal-ht/imdino
+
+Usando Python v2.7 e Tensoflow, utiliza algoritmos genéticos com uma evolução constante com o passar das gerações.
+Consiste em um mecanismo de busca direcionada baseado na evolução dos seres biológicos.
+Provêem técnicas eficazes (mas não tão eficientes) de otimização e de aprendizado de máquina.
+Para saber mais recomendo a leitura abaixo.
+
+http://edirlei.3dgb.com.br/aulas/ia_2012_1/IA_Aula_04_Algoritmos_Geneticos.pdf
+
 
 ## Requirements:
 - redis
@@ -15,60 +24,91 @@ It uses neural networks to train a system to play dinosaur game on chrome when i
 - virtual environment
 
 
-clone the code. and cd to project src folder of git project and
-on MAC do following:
+clone o código
+```
+git clone https://github.com/JeqTech/AgDinoGoogle.git
+```
+
+O sistema utilizado para realizar o procedimento foi o MacOS, portanto, foi ajustado as dependências de acordo com o sistema operacional.
+
+Instale redis
+Redis é um open source (licenciado pelo BSD), armazenamento de estrutura de dados na memória, usado como banco de dados, cache e message broker.
+https://redis.io/
 
 ```
 brew install redis
 ```
 
-Create and activate virtual environment and run following
+Crie um virtualenv com o nome do projeto que deseja:
+
+```
+virtualenv dino
+source dino/bin/activate
+```
+
+Instale as dependências
 ```
 pip install -r requirements.txt
 ```
 
+
 ##For capturing data :
 
-Run
+Inicie o Redis Server
+```
+redis-server
 ```
 
+Execute:
+
+```
 python fl.py
 
 ```
-and
-copy javascript code from dino.js file.
 
-Now open chrome browser, go offline, and open any website. No internet connection with dino game will appear on chrome.
-Right click on the page and select inspect element option. click on console and paste the copied javasript.
-now drag the top of console till lowest point possible.
+Copie o código abaixo:
+
+```
+var http = new XMLHttpRequest();setInterval(function(){
+var obs = Runner.instance_.horizon.obstacles.length;
+if(obs==0){
+  var fs = null;
+  var fd = null;
+}
+else{
+   var fs=Runner.instance_.horizon.obstacles[0].width;
+   var fd=Runner.instance_.horizon.obstacles[0].xPos;}
+var d = { "s": Runner.instance_.currentSpeed/13, "fs":fs/60.0 , "fd": fd/50.0, "sc": Runner.instance_.distanceRan*.025, "o":Runner.instance_.crashed , "n": obs}
+var url='http://127.0.1:5000/?r='+JSON.stringify(d);http.open("GET", url);
+http.send(null);console.log('yes');}, 90)
+```
+
+Agora abra o chrome e digite no navegador "chrome://dino/", clique com o botão na pagina e vá em "Inspencionar", na aba console cole o códico copiado acima e de um enter.
+Retorne para a pagina do jogo. Mova o navegador até a parte mais baixa possivel.
 
 
 ## Running game
-shorten the chrome window width by 2/3rd of screen size. open terminal and adjust its screen size to 1/3 rd space left.
-Activate virtual environment, cd to project folder
-and run
+Encurtar a largura da janela do navegador em 2/3 do tamanho da tela. Abra o terminal e ajuste o tamanho do ecrã para 1/3 do espaço restante. Ative o virtualenv e execute na pasta src:
+
 ```
 python main.py
 
 ```
+### Propostas de melhorias:
 
-If you get 'FAILED TO FIND GAME!' error, then check if dinosaur game is visible. 
-If it is not working even after game is visible, try after removing multiplication by two at line number 6 and 7 in scanner.py.
+Atualizar o código e bibliotecas para versões mais rescentes.
+Realizar um processo de simulação do aprendizado do algortimo genético, ao invés de executar em tempo real, poderá acelerar o processo de aprendizado.
+Utilizar um algoritmo de aprendizado por reforço (Reinforcement Learning and Deep Q-network)
 
-#### bugs
+
+
+
+
+#### bugs do projeto original
 - Interupttion is not working correctly and may cause system to hang.
 - bug in Chrome, dino moves from its postion after many games, workaround - refreshing the dinosaur game page and copy the javascript code and paste in console as described above
-
-#### Improvements Required:
-- [ ] Interupttion is not working correctly and may cause system to hang.
-- [ ] Docuement the code to explain more precisely.
-
-
-
 
 
 Credits:
 
 Project: https://github.com/aymericdamien/TensorFlow-Examples/
-
-https://github.com/ivanseidel/IAMDinosaur
