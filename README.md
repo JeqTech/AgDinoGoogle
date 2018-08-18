@@ -98,7 +98,7 @@ python main.py
 * Atualizar o código e as bibliotecas para mais rescentes .
 * Atualizar o código e as bibliotecas para versões mais recentes .
 * Realizar hum Processo de Simulação fazer Aprendizado fazer algortimo genético, AO inves de executar em Tempo Real, podera acelerar o Processo de Aprendizado.
-
+* Utilizando um algoritmo de aprendizado por reforço (Reforcement Learning e Deep Q-network)
 
 
 Credits:
