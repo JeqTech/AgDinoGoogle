@@ -94,22 +94,6 @@ Encurtar a largura da janela do navegador em 2/3 do tamanho da tela. Abra o term
 python main.py
 
 ```
-### Propostas de melhorias:
-
-* Atualizar o código e bibliotecas para versões mais recentes.
-
-* Realizar um processo de simulação do aprendizado do algortimo genético, ao invés de executar em tempo real, poderá acelerar o processo de aprendizado.
-
-* Utilizar um algoritmo de aprendizado por reforço (Reinforcement Learning and Deep Q-network)
-
-
-
-
-
-#### bugs do projeto original
-- Interupttion is not working correctly and may cause system to hang.
-- bug in Chrome, dino moves from its postion after many games, workaround - refreshing the dinosaur game page and copy the javascript code and paste in console as described above
-
 
 Credits:
 
