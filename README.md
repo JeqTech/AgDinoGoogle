@@ -94,6 +94,12 @@ Encurtar a largura da janela do navegador em 2/3 do tamanho da tela. Abra o term
 python main.py
 
 ```
+###  Propostas de melhorias:
+* Atualizar o código e as bibliotecas para mais rescentes .
+* Atualizar o código e as bibliotecas para versões mais recentes .
+* Realizar hum Processo de Simulação fazer Aprendizado fazer algortimo genético, AO inves de executar em Tempo Real, podera acelerar o Processo de Aprendizado.
+
+
 
 Credits:
 
